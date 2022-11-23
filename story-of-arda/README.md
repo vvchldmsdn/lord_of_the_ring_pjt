@@ -1,4 +1,4 @@
-# story_of_arda
+# story-of-arda
 
 ## Project setup
 ```
