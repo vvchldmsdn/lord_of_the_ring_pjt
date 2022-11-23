@@ -9,6 +9,7 @@ class Character(models.Model):
     description = models.TextField()
     age = models.IntegerField(default=0)
     image = models.TextField()
+    race = models.CharField(max_length=10)
 
 
 class Family(models.Model):
