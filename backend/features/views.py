@@ -50,3 +50,15 @@ def character_list(request):
         return get_characters()
     elif request.method == 'POST':
         return post_characters()
+
+
+def get_race_list(request, race):
+    races = get_list_or_404(Character, race=race)
+    serializer = CharacterSerializer(races, many=True)
+    return Response(serializer.data)
+
+
+def get_character_detail(request, character):
+    character = get_object_or_404(Character, name=character)
+    serializer = CharacterSerializer(character)
+    return Response(serializer.data)
