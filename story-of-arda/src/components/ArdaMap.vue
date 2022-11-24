@@ -1,9 +1,11 @@
 <template>
   <div class="arda">
     <p>HIIII</p>
-    <l-map style="height: 350px" :zoom="zoom" :center="center">
-      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-    </l-map>
+    <div class="tmp">
+      <l-map :zoom="zoom" :center="center">
+        <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+      </l-map>
+    </div>
   </div>
 </template>
 
@@ -30,4 +32,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.tmp {
+  width: 100%;
+  height: 400px;
+}
+</style>
