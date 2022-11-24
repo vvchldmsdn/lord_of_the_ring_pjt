@@ -2,30 +2,31 @@
   <div class="arda">
     <p>HIIII</p>
     <div class="tmp">
-      <l-map :zoom="zoom" :center="center">
-        <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+      <l-map style="height: 350px" :crs="crs" :options="{ zoomControl: false }">
+        <l-image-overlay :url="url" :bounds="bounds"></l-image-overlay>
       </l-map>
     </div>
   </div>
 </template>
 
 <script>
-// import L from "leaflet";
-import { LMap, LTileLayer } from "vue2-leaflet";
+import L from "leaflet";
+import { LMap, LImageOverlay } from "vue2-leaflet";
 
 export default {
   name: "ArdaMap",
   components: {
     LMap,
-    LTileLayer,
+    LImageOverlay,
   },
   data() {
     return {
-      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      attribution:
-        '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      zoom: 8,
-      center: [47.31322, -1.319482],
+      url: "https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+      bounds: [
+        [-26.5, -25],
+        [1021.5, 1023],
+      ],
+      crs: L.CRS.Simple,
     };
   },
   methods: {},
@@ -34,7 +35,7 @@ export default {
 
 <style>
 .tmp {
-  width: 100%;
-  height: 400px;
+  width: 500px;
+  height: 500px;
 }
 </style>
