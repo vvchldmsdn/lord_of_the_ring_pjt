@@ -2,16 +2,22 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import ArdaMap from '@/components/ArdaMap.vue'
+import RaceView from '@/views/RaceView.vue'
 
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/arda',
+    path: '',
     name: 'arda',
     component: ArdaMap
   },
+  {
+    path: '/races',
+    name: 'races',
+    component: RaceView
+  }
 ]
 
 const router = new VueRouter({

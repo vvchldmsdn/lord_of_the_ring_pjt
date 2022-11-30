@@ -1,6 +1,7 @@
 <template>
   <div class="arda">
     <p>HIIII</p>
+    <router-link :to="{ name: 'races' }">To Race View</router-link>
     <div class="tmp">
       <l-map style="height: 350px" :crs="crs" :options="{ zoomControl: false }">
         <l-image-overlay :url="url" :bounds="bounds"></l-image-overlay>
